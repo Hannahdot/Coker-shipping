@@ -27,6 +27,9 @@
     <input type="text" id="trackingInput" placeholder="e.g. AWX123456789" />
     <button onclick="trackShipment()">Track</button>
     <div id="result" class="tracking-result"></div>
+      <p style="color: darkred; font-weight: bold; margin-top: 20px;">
+        Note: a fee of $3500 must be paid before item moves
+      </p>
   </div>
   <div class="footer">
     &copy; 2025 American Winners Shipping Co.
@@ -54,7 +57,8 @@
           <div class="history-entry">📦 <strong>June 25, 2025 – 9:00 AM:</strong> Item received from shipper</div> ➝
           <div class="history-entry">📤 <strong>June 25, 2025 – 9:30 AM:</strong> Item departed from sorting facility in Florida</div> ➝
           <div class="history-entry">🏙️ <strong>June 25, 2025 – 10:30 AM:</strong> Items arrived at Jacksonville</div> ➝
-          <div class="history-entry">📤 <strong>June 25, 2025 – 10:40 AM:</strong> Items departed from a sorting facility in Jacksonville</div>
+          <div class="history-entry">📤 <strong>June 25, 2025 – 10:40 AM:</strong> Items departed from a sorting facility in Jacksonville</div> ➝
+          <div class="history-entry">📍 <strong>June 25, 2025 – 12:10 PM:</strong> Items arrived at Georgia. A fee of $3,500 must be paid before the item can move</div>
         `;
       }} else {{
         resultDiv.innerHTML = "<p>❌ Tracking number not found. Please check and try again.</p>";
