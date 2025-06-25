@@ -25,7 +25,7 @@
       margin-bottom: 2rem;
     }
     .tracking-box {
-      max-width: 550px;
+      max-width: 600px;
       margin: 0 auto;
       background-color: #1a1a1a;
       padding: 2rem;
@@ -68,6 +68,14 @@
       margin: 1rem auto;
       display: block;
     }
+    .history {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid #444;
+    }
+    .history-entry {
+      margin-bottom: 0.5rem;
+    }
     footer {
       margin-top: 3rem;
       font-size: 0.9rem;
@@ -90,17 +98,24 @@
       <h3>Tracking Details</h3>
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Trunk_Box.jpg/640px-Trunk_Box.jpg" alt="Metallic Trunk Box" class="trunk">
       <p><strong>Tracking Code:</strong> <span id="code"></span></p>
-      <p><strong>Item:</strong> <span id="item"></span></p>
-      <p><strong>Status:</strong> <span id="status"></span></p>
+      <p><strong>Item:</strong> Metallic Trunk Box</p>
+      <p><strong>Status:</strong> In Transit (Stopped in Texas)</p>
       <p><strong>Shipping Method:</strong> Air Cargo</p>
-      <p><strong>Shipment Date:</strong> June 20, 2025</p>
+      <p><strong>Shipment Date:</strong> June 25, 2025</p>
       <p><strong>Weight:</strong> 45kg</p>
-      <p><strong>Current Location:</strong> <span id="location"></span></p>
-      <p><strong>Destination:</strong> <span id="destination"></span></p>
+      <p><strong>Current Location:</strong> Texas, USA</p>
+      <p><strong>Destination:</strong> Oklahoma, USA</p>
       <p><strong>Recipient:</strong> Paul Wood</p>
       <p><strong>Last Scanned:</strong> Houston, Texas Facility</p>
       <p><strong>Expected Delivery:</strong> July 1, 2025</p>
-      <p style="color: red;"><strong>Note:</strong> A shipping clearance fee must be paid before the item proceeds to delivery.</p>
+      <p><strong>Shipper:</strong> Robert Agent Wood, Florida</p>
+      <p><strong>Contact:</strong> robertagentwood@gmail.com</p>
+      <div class="history">
+        <h4>Shipment History</h4>
+        <div class="history-entry">📦 <strong>June 25, 2025 – 12:00 PM:</strong> Item received from shipper</div>
+        <div class="history-entry">📤 <strong>June 25, 2025 – 1:30 PM:</strong> Item departed from sorting facility in Florida</div>
+      </div>
+      <p style="color: red; margin-top: 1rem;"><strong>Note:</strong> A shipping clearance fee must be paid before the item proceeds to delivery.</p>
     </div>
   </div>
 
@@ -109,33 +124,15 @@
   </footer>
 
   <script>
-    const trackingData = {
-      "TR599762932": {
-        code: "TR599762932",
-        item: "Metallic Trunk Box",
-        status: "In Transit (Stopped in Texas)",
-        location: "Texas, USA",
-        destination: "Oklahoma, USA"
-      }
-    };
     function trackShipment() {
       const input = document.getElementById("trackingInput").value.trim().toUpperCase();
       const resultBox = document.getElementById("resultBox");
-      if (trackingData[input]) {
-        const data = trackingData[input];
-        document.getElementById("code").textContent = data.code;
-        document.getElementById("item").textContent = data.item;
-        document.getElementById("status").textContent = data.status;
-        document.getElementById("location").textContent = data.location;
-        document.getElementById("destination").textContent = data.destination;
+      if (input === "TR599762932") {
+        document.getElementById("code").textContent = input;
         resultBox.style.display = "block";
       } else {
         resultBox.style.display = "block";
-        document.getElementById("code").textContent = input;
-        document.getElementById("item").textContent = "N/A";
-        document.getElementById("status").textContent = "Tracking number not found.";
-        document.getElementById("location").textContent = "-";
-        document.getElementById("destination").textContent = "-";
+        resultBox.innerHTML = "<h3 style='color: red;'>Tracking number not found.</h3>";
       }
     }
   </script>
