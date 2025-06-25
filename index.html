@@ -13,14 +13,12 @@
       text-align: center;
       padding: 2rem;
     }
-
     .logo {
       font-size: 2.5rem;
       font-weight: bold;
       letter-spacing: 2px;
       margin-bottom: 1rem;
     }
-
     .tracking-box {
       max-width: 500px;
       margin: 0 auto;
@@ -29,7 +27,6 @@
       border-radius: 10px;
       box-shadow: 0 0 10px #d4af37;
     }
-
     input[type="text"] {
       width: 80%;
       padding: 10px;
@@ -39,7 +36,6 @@
       background: #000;
       color: #fff;
     }
-
     button {
       background-color: #d4af37;
       color: #000;
@@ -50,7 +46,6 @@
       border-radius: 5px;
       cursor: pointer;
     }
-
     .result {
       margin-top: 2rem;
       background: #111;
@@ -58,7 +53,6 @@
       border-radius: 10px;
       display: none;
     }
-
     img.trunk {
       width: 100%;
       max-width: 300px;
@@ -67,16 +61,13 @@
   </style>
 </head>
 <body>
-
   <div class="logo">COKER GREEK GOLD BELT</div>
-
   <div class="tracking-box">
     <h2>TRACK SHIPMENT</h2>
     <p>Enter your tracking number below.</p>
     <input type="text" id="trackingInput" placeholder="e.g. TR599762932"/>
     <br>
     <button onclick="trackShipment()">TRACK</button>
-
     <div class="result" id="resultBox">
       <h3>TRACKING RESULT</h3>
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Trunk_Box.jpg/640px-Trunk_Box.jpg" alt="Metallic Trunk Box" class="trunk">
@@ -88,7 +79,6 @@
       <p><strong>Expected Delivery:</strong> <span id="delivery"></span></p>
     </div>
   </div>
-
   <script>
     const trackingData = {
       "TR599762932": {
@@ -100,11 +90,9 @@
         delivery: "July 1, 2025"
       }
     };
-
     function trackShipment() {
       const input = document.getElementById("trackingInput").value.trim().toUpperCase();
       const resultBox = document.getElementById("resultBox");
-
       if (trackingData[input]) {
         const data = trackingData[input];
         document.getElementById("code").textContent = data.code;
