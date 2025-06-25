@@ -2,72 +2,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Shipment Tracking - American Winners Shipping Co</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>American Winners Shipping Co</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-    h1 {
-      color: #2b2b6d;
-    }
-    .section {
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 30px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    li::before {
-      content: "→ ";
-      color: green;
-    }
-    .status {
-      font-weight: bold;
-      color: orange;
-    }
+    body {{ font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }}
+    header {{ background: #003366; color: #fff; padding: 1em; text-align: center; }}
+    .container {{ max-width: 800px; margin: 2em auto; background: #fff; padding: 2em; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }}
+    h1 {{ margin-top: 0; }}
+    input[type="text"] {{ width: 100%; padding: 10px; margin: 10px 0; font-size: 1em; }}
+    button {{ background: #003366; color: white; border: none; padding: 10px 20px; font-size: 1em; cursor: pointer; }}
+    .tracking-result {{ margin-top: 2em; }}
+    .history-entry {{ margin-bottom: 10px; }}
+    .footer {{ text-align: center; margin-top: 2em; color: #666; font-size: 0.9em; }}
+    img.trunk {{ max-width: 100%; height: auto; border: 1px solid #ccc; margin: 1em 0; }}
   </style>
 </head>
 <body>
-
-  <h1>📦 American Winners Shipping Co</h1>
-
-  <div class="section">
-    <h2>Shipment Tracking Details</h2>
-    <p><strong>Tracking Code:</strong> TR599762932</p>
-    <p><strong>Shipping Method:</strong> ✈️ By Flight</p>
-    <p><strong>Status:</strong> <span class="status">🟡 In Transit</span></p>
-    <p><strong>Expected Delivery Date:</strong> 26 June 2025</p>
+  <header>
+    <h1>AMERICAN WINNERS SHIPPING CO</h1>
+  </header>
+  <div class="container">
+    <h2>Track Your Shipment</h2>
+    <input type="text" id="trackingInput" placeholder="e.g. AWX123456789" />
+    <button onclick="trackShipment()">Track</button>
+    <div id="result" class="tracking-result"></div>
   </div>
-
-  <div class="section">
-    <h3>📍 Shipment History</h3>
-    <ul>
-      <li>25 June 2025, 12:00 PM → Item received from shipper</li>
-      <li>25 June 2025, 1:30 PM → Item departed from sorting facility in Florida</li>
-    </ul>
+  <div class="footer">
+    &copy; 2025 American Winners Shipping Co.
   </div>
-
-  <div class="section">
-    <h3>👤 Shipper Information</h3>
-    <p><strong>Name:</strong> Robert Agent Wood</p>
-    <p><strong>Location:</strong> Florida</p>
-    <p><strong>Email:</strong> robertagentwood@gmail.com</p>
-    <p><strong>Shipment Date:</strong> 25 June 2025</p>
-  </div>
-
-  <div class="section">
-    <h3>📦 Recipient Information</h3>
-    <p><strong>Name:</strong> Paul Wood</p>
-    <p><strong>Address:</strong> 35916 E 231st St S, Porter, Oklahoma, 74454, USA</p>
-  </div>
-
+  <script>
+    function trackShipment() {{
+      const trackingCode = document.getElementById('trackingInput').value.trim();
+      const resultDiv = document.getElementById('result');
+      if (trackingCode === 'TR599762932') {{
+        resultDiv.innerHTML = `
+          <h3>Tracking Details</h3>
+          <img src="package.jpg" alt="Package Photo" class="trunk">
+          <p><strong>Tracking Number:</strong> TR599762932</p>
+          <p><strong>Status:</strong> 🚚 In Transit</p>
+          <p><strong>Current Location:</strong> Florida</p>
+          <p><strong>Shipping Method:</strong> By Flight</p>
+          <p><strong>Expected Delivery:</strong> June 26, 2025</p>
+          <p><strong>Recipient:</strong> Paul Wood</p>
+          <p><strong>Recipient Address:</strong> 35916 E 231 ST S, Porter, OK 74454</p>
+          <p><strong>Shipper:</strong> Robert Agent Wood</p>
+          <p><strong>Shipper Location:</strong> Florida</p>
+          <p><strong>Contact:</strong> robertagentwood@gmail.com</p>
+          <p><strong>Shipment Date:</strong> 25th June 2025</p>
+          <h4>Shipment History</h4>
+          <div class="history-entry">📦 <strong>June 25, 2025 – 9:00 AM:</strong> Item received from shipper</div> ➝
+          <div class="history-entry">📤 <strong>June 25, 2025 – 9:30 AM:</strong> Item departed from sorting facility in Florida</div>
+        `;
+      }} else {{
+        resultDiv.innerHTML = "<p>❌ Tracking number not found. Please check and try again.</p>";
+      }}
+    }}
+  </script>
 </body>
 </html>
