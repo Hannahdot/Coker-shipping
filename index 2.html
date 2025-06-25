@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coker Greek Gold Belt - Track Shipment</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #0e0e0e;
+      color: #d4af37;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .logo {
+      font-size: 2.5rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .tracking-box {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #1a1a1a;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #d4af37;
+    }
+
+    input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      border: 2px solid #d4af37;
+      border-radius: 5px;
+      margin-top: 1rem;
+      background: #000;
+      color: #fff;
+    }
+
+    button {
+      background-color: #d4af37;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 2rem;
+      background: #111;
+      padding: 1.5rem;
+      border-radius: 10px;
+      display: none;
+    }
+
+    img.trunk {
+      width: 100%;
+      max-width: 300px;
+      margin: 1rem auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">COKER GREEK GOLD BELT</div>
+
+  <div class="tracking-box">
+    <h2>TRACK SHIPMENT</h2>
+    <p>Enter your tracking number below.</p>
+    <input type="text" id="trackingInput" placeholder="e.g. TR599762932"/>
+    <br>
+    <button onclick="trackShipment()">TRACK</button>
+
+    <div class="result" id="resultBox">
+      <h3>TRACKING RESULT</h3>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Trunk_Box.jpg/640px-Trunk_Box.jpg" alt="Metallic Trunk Box" class="trunk">
+      <p><strong>Tracking Code:</strong> <span id="code"></span></p>
+      <p><strong>Item:</strong> <span id="item"></span></p>
+      <p><strong>Status:</strong> <span id="status"></span></p>
+      <p><strong>Current Location:</strong> <span id="location"></span></p>
+      <p><strong>Destination:</strong> <span id="destination"></span></p>
+      <p><strong>Expected Delivery:</strong> <span id="delivery"></span></p>
+    </div>
+  </div>
+
+  <script>
+    const trackingData = {
+      "TR599762932": {
+        code: "TR599762932",
+        item: "Metallic Trunk Box",
+        status: "In Transit",
+        location: "Tennessee, USA",
+        destination: "Florida, USA",
+        delivery: "July 1, 2025"
+      }
+    };
+
+    function trackShipment() {
+      const input = document.getElementById("trackingInput").value.trim().toUpperCase();
+      const resultBox = document.getElementById("resultBox");
+
+      if (trackingData[input]) {
+        const data = trackingData[input];
+        document.getElementById("code").textContent = data.code;
+        document.getElementById("item").textContent = data.item;
+        document.getElementById("status").textContent = data.status;
+        document.getElementById("location").textContent = data.location;
+        document.getElementById("destination").textContent = data.destination;
+        document.getElementById("delivery").textContent = data.delivery;
+        resultBox.style.display = "block";
+      } else {
+        resultBox.style.display = "block";
+        document.getElementById("code").textContent = input;
+        document.getElementById("item").textContent = "N/A";
+        document.getElementById("status").textContent = "Tracking number not found.";
+        document.getElementById("location").textContent = "-";
+        document.getElementById("destination").textContent = "-";
+        document.getElementById("delivery").textContent = "-";
+      }
+    }
+  </script>
+</body>
+</html>
