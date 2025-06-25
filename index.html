@@ -1,140 +1,73 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>American Winners Shipping Co - Shipment Tracker</title>
+  <meta charset="UTF-8">
+  <title>Shipment Tracking - American Winners Shipping Co</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Georgia', serif;
-      background-color: #0e0e0e;
-      color: #d4af37;
-      text-align: center;
-      padding: 2rem;
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f4f4f4;
+      color: #333;
     }
-    .logo {
-      font-size: 2.5rem;
+    h1 {
+      color: #2b2b6d;
+    }
+    .section {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li::before {
+      content: "→ ";
+      color: green;
+    }
+    .status {
       font-weight: bold;
-      letter-spacing: 2px;
-      margin-bottom: 0.5rem;
-    }
-    .sub-logo {
-      font-size: 1rem;
-      color: #ccc;
-      margin-bottom: 2rem;
-    }
-    .tracking-box {
-      max-width: 600px;
-      margin: 0 auto;
-      background-color: #1a1a1a;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 12px #d4af37;
-    }
-    input[type="text"] {
-      width: 80%;
-      padding: 10px;
-      border: 2px solid #d4af37;
-      border-radius: 5px;
-      margin-top: 1rem;
-      background: #000;
-      color: #fff;
-    }
-    button {
-      background-color: #d4af37;
-      color: #000;
-      border: none;
-      padding: 10px 20px;
-      margin-top: 1rem;
-      font-weight: bold;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .result {
-      margin-top: 2rem;
-      background: #111;
-      padding: 1.5rem;
-      border-radius: 10px;
-      display: none;
-      text-align: left;
-    }
-    .result p {
-      margin: 0.4rem 0;
-    }
-    img.trunk {
-      width: 100%;
-      max-width: 300px;
-      margin: 1rem auto;
-      display: block;
-    }
-    .history {
-      margin-top: 1.5rem;
-      padding-top: 1rem;
-      border-top: 1px solid #444;
-    }
-    .history-entry {
-      margin-bottom: 0.5rem;
-    }
-    footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #555;
+      color: orange;
     }
   </style>
 </head>
 <body>
-  <div class="logo">AMERICAN WINNERS SHIPPING CO</div>
-  <div class="sub-logo">Secure Global Shipping Services</div>
 
-  <div class="tracking-box">
-    <h2>Track Your Shipment</h2>
-    <p>Enter your tracking number below to view current shipment details.</p>
-    <input type="text" id="trackingInput" placeholder="e.g. AWX123456789"/>
-    <br>
-    <button onclick="trackShipment()">TRACK</button>
+  <h1>📦 American Winners Shipping Co</h1>
 
-    <div class="result" id="resultBox">
-      <h3>Tracking Details</h3>
-      <img src="package.jpg" alt="Metallic Trunk Box" class="trunk">
-      <p><strong>Tracking Code:</strong> <span id="code"></span></p>
-      <p><strong>Item:</strong> Metallic Trunk Box</p>
-      <p><strong>Status:</strong> 🚚 In Transit</p>
-      <p><strong>Shipping Method:</strong> By Flight</p>
-      <p><strong>Shipment Date:</strong> June 25, 2025</p>
-      <p><strong>Weight:</strong> 45kg</p>
-      <p><strong>Current Location:</strong> Florida</p>
-      <p><strong>Destination:</strong> Oklahoma, USA</p>
-      <p><strong>Recipient:</strong> Paul Wood</p>
-      <p><strong>Recipient Address:</strong> E 231st St S, Porter, Oklahoma 74454, USA</p>
-      <p><strong>Last Scanned:</strong> Florida Sorting Facility</p>
-      <p><strong>Expected Delivery:</strong> June 26, 2025</p>
-      <p><strong>Shipper:</strong> Robert Agent Wood, Florida</p>
-      <p><strong>Contact:</strong> robertagentwood@gmail.com</p>
-      <div class="history">
-        <h4>Shipment History</h4>
-        <div class="history-entry">📦 <strong>June 25, 2025 – 12:00 PM:</strong> Item received from shipper</div> ➝
-        <div class="history-entry">📤 <strong>June 25, 2025 – 1:30 PM:</strong> Item departed from sorting facility in Florida</div>
-      </div>
-    </div>
+  <div class="section">
+    <h2>Shipment Tracking Details</h2>
+    <p><strong>Tracking Code:</strong> TR599762932</p>
+    <p><strong>Shipping Method:</strong> ✈️ By Flight</p>
+    <p><strong>Status:</strong> <span class="status">🟡 In Transit</span></p>
+    <p><strong>Expected Delivery Date:</strong> 26 June 2025</p>
   </div>
 
-  <footer>
-    © 2025 American Winners Shipping Co Shipping Co. | All rights reserved.
-  </footer>
+  <div class="section">
+    <h3>📍 Shipment History</h3>
+    <ul>
+      <li>25 June 2025, 9:00 AM → Item received from shipper</li>
+      <li>25 June 2025, 9:30 AM → Item departed from sorting facility in Florida</li>
+    </ul>
+  </div>
 
-  <script>
-    function trackShipment() {
-      const input = document.getElementById("trackingInput").value.trim().toUpperCase();
-      const resultBox = document.getElementById("resultBox");
-      if (input === "TR599762932") {
-        document.getElementById("code").textContent = input;
-        resultBox.style.display = "block";
-      } else {
-        resultBox.style.display = "block";
-        resultBox.innerHTML = "<h3 style='color: red;'>Tracking number not found.</h3>";
-      }
-    }
-  </script>
+  <div class="section">
+    <h3>👤 Shipper Information</h3>
+    <p><strong>Name:</strong> Robert Agent Wood</p>
+    <p><strong>Location:</strong> Florida</p>
+    <p><strong>Email:</strong> robertagentwood@gmail.com</p>
+    <p><strong>Shipment Date:</strong> 25 June 2025</p>
+  </div>
+
+  <div class="section">
+    <h3>📦 Recipient Information</h3>
+    <p><strong>Name:</strong> Paul Wood</p>
+    <p><strong>Address:</strong> 35916 E 231st St S, Porter, Oklahoma, 74454, USA</p>
+  </div>
+
 </body>
 </html>
