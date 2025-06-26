@@ -6,16 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>American Winners Shipping Co</title>
   <style>
-    body {{ font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }}
-    header {{ background: #003366; color: #fff; padding: 1em; text-align: center; }}
-    .container {{ max-width: 800px; margin: 2em auto; background: #fff; padding: 2em; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }}
-    h1 {{ margin-top: 0; }}
-    input[type="text"] {{ width: 100%; padding: 10px; margin: 10px 0; font-size: 1em; }}
-    button {{ background: #003366; color: white; border: none; padding: 10px 20px; font-size: 1em; cursor: pointer; }}
-    .tracking-result {{ margin-top: 2em; }}
-    .history-entry {{ margin-bottom: 10px; }}
-    .footer {{ text-align: center; margin-top: 2em; color: #666; font-size: 0.9em; }}
-    img.trunk {{ max-width: 100%; height: auto; border: 1px solid #ccc; margin: 1em 0; }}
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+    header { background: #003366; color: #fff; padding: 1em; text-align: center; }
+    .container { max-width: 800px; margin: 2em auto; background: #fff; padding: 2em; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    h1 { margin-top: 0; }
+    input[type="text"] { width: 100%; padding: 10px; margin: 10px 0; font-size: 1em; }
+    button { background: #003366; color: white; border: none; padding: 10px 20px; font-size: 1em; cursor: pointer; }
+    .tracking-result { margin-top: 2em; }
+    .history-entry { margin-bottom: 10px; }
+    .footer { text-align: center; margin-top: 2em; color: #666; font-size: 0.9em; }
+    img.trunk { max-width: 100%; height: auto; border: 1px solid #ccc; margin: 1em 0; }
   </style>
 </head>
 <body>
@@ -27,18 +27,15 @@
     <input type="text" id="trackingInput" placeholder="e.g. AWX123456789" />
     <button onclick="trackShipment()">Track</button>
     <div id="result" class="tracking-result"></div>
-      <p style="color: darkred; font-weight: bold; margin-top: 20px;">
-        Note: a fee of $3500 must be paid before item moves
-      </p>
   </div>
   <div class="footer">
     &copy; 2025 American Winners Shipping Co.
   </div>
   <script>
-    function trackShipment() {{
+    function trackShipment() {
       const trackingCode = document.getElementById('trackingInput').value.trim();
       const resultDiv = document.getElementById('result');
-      if (trackingCode === 'TR599762932') {{
+      if (trackingCode === 'TR599762932') {
         resultDiv.innerHTML = `
           <h3>Tracking Details</h3>
           <img src="package.jpg" alt="Package Photo" class="trunk">
@@ -59,11 +56,15 @@
           <div class="history-entry">🏙️ <strong>June 25, 2025 – 10:30 AM:</strong> Items arrived at Jacksonville</div> ➝
           <div class="history-entry">📤 <strong>June 25, 2025 – 10:40 AM:</strong> Items departed from a sorting facility in Jacksonville</div> ➝
           <div class="history-entry">📍 <strong>June 25, 2025 – 12:01 PM:</strong> Items arrived at Georgia. A fee of $3,500 must be paid before the item can move</div>
+          <p style="color: darkred; font-weight: bold; margin-top: 20px;">
+            Note: a fee of $3500 must be paid before item moves<br>
+            <span style="font-size: 1.2em; font-weight: bold; color: darkred;">Item may be returned if payment delays ‼️</span>
+          </p>
         `;
-      }} else {{
+      } else {
         resultDiv.innerHTML = "<p>❌ Tracking number not found. Please check and try again.</p>";
-      }}
-    }}
+      }
+    }
   </script>
 </body>
 </html>
