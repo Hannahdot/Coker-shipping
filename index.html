@@ -3,42 +3,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>American Winners Shipping Co - Track Your Shipment</title>
+  <title>Shipment Tracking - American Winners Shipping Co</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      margin: 40px;
       background-color: #f4f4f4;
-      padding: 30px;
       color: #333;
     }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      background: #fff;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h1, h2 {
+    h1 {
       color: #2b2b6d;
     }
-    input[type="text"] {
-      width: 70%;
-      padding: 10px;
-      font-size: 16px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      margin-left: 10px;
-      background-color: #2b2b6d;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
-    .result {
-      margin-top: 30px;
-      display: none;
+    .section {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     ul {
       list-style-type: none;
@@ -52,63 +33,58 @@
       font-weight: bold;
       color: orange;
     }
-    .error {
+    .note {
       color: red;
-      margin-top: 20px;
-      display: none;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .note.large {
+      font-size: 18px;
+      font-weight: 900;
+      color: darkred;
     }
   </style>
 </head>
 <body>
 
-<div class="container">
   <h1>📦 American Winners Shipping Co</h1>
-  <p>Enter your tracking code below to see your shipment details:</p>
-  <input type="text" id="trackingInput" placeholder="Enter tracking code">
-  <button onclick="track()">Track</button>
 
-  <div id="result" class="result">
+  <div class="section">
     <h2>Shipment Tracking Details</h2>
     <p><strong>Tracking Code:</strong> TR599762932</p>
     <p><strong>Shipping Method:</strong> ✈️ By Flight</p>
     <p><strong>Status:</strong> <span class="status">🟡 In Transit</span></p>
-    <p><strong>Expected Delivery Date:</strong> 28 June 2025</p>
+    <p><strong>Expected Delivery Date:</strong> 26 June 2025</p>
+  </div>
 
+  <div class="section">
     <h3>📍 Shipment History</h3>
     <ul>
       <li>25 June 2025, 9:00 AM → Item received from shipper</li>
       <li>25 June 2025, 9:30 AM → Item departed from sorting facility in Florida</li>
+      <li>25 June 2025, 10:30 AM → Items arrived at Jacksonville</li>
+      <li>25 June 2025 → Items departed from a sorting facility in Jacksonville</li>
+      <li>25 June 2025, 12:00 PM → Item received from shipper</li>
+      <li>25 June 2025, 1:30 PM → Item departed from sorting facility in Florida</li>
+      <li>25 June 2025, 12:10 PM → Items arrived at Georgia</li>
     </ul>
+    <p class="note">A fee of $3,500 must be paid before the item can move.</p>
+    <p class="note large">Item may be returned if payment delays ‼️</p>
+  </div>
 
+  <div class="section">
     <h3>👤 Shipper Information</h3>
     <p><strong>Name:</strong> Robert Agent Wood</p>
     <p><strong>Location:</strong> Florida</p>
     <p><strong>Email:</strong> robertagentwood@gmail.com</p>
     <p><strong>Shipment Date:</strong> 25 June 2025</p>
+  </div>
 
+  <div class="section">
     <h3>📦 Recipient Information</h3>
     <p><strong>Name:</strong> Paul Wood</p>
     <p><strong>Address:</strong> 35916 E 231st St S, Porter, Oklahoma, 74454, USA</p>
   </div>
-
-  <div id="error" class="error">❌ Tracking code not found. Please try again.</div>
-</div>
-
-<script>
-  function track() {
-    var code = document.getElementById("trackingInput").value.trim();
-    var result = document.getElementById("result");
-    var error = document.getElementById("error");
-
-    if (code === "TR599762932") {
-      result.style.display = "block";
-      error.style.display = "none";
-    } else {
-      result.style.display = "none";
-      error.style.display = "block";
-    }
-  }
-</script>
 
 </body>
 </html>
