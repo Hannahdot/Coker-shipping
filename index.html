@@ -1,85 +1,39 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shipment Tracking - American Winners Shipping Co</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f8f9fa;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #004080;
-      color: white;
-      padding: 10px 20px;
-      text-align: center;
-    }
-    main {
-      padding: 20px;
-      max-width: 700px;
-      margin: auto;
-      background: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h2 {
-      color: #004080;
-    }
-    .status {
-      font-size: 1.1em;
-      font-weight: bold;
-      color: #d49b00;
-    }
-    .info {
-      margin-bottom: 15px;
-    }
-    .info strong {
-      display: inline-block;
-      width: 180px;
-    }
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    ul li {
-      margin-bottom: 8px;
-    }
-    .footer {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 0.9em;
-      color: #777;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>American Winners Shipping Co</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>American Winners Shipping Co</h1>
-  </header>
-  <main>
-    <h2>Tracking Code: TR599762932</h2>
-    <div class="info"><strong>Shipper:</strong> Robert Agent Wood, Florida (<a href="mailto:robertagentwood@gmail.com">robertagentwood@gmail.com</a>)</div>
-    <div class="info"><strong>Recipient:</strong> Paul Wood, 35916 E 231st St S, Porter, OK 74454, USA</div>
-    <div class="info"><strong>Shipping Method:</strong> By Flight</div>
-    <div class="info"><strong>Status:</strong> <span class="status">🟡 In Transit – Item departed from Alabama</span></div>
-    <div class="info"><strong>Current Location:</strong> Alabama</div>
-    <div class="info"><strong>Expected Delivery Date:</strong> 22nd July 2025 by end of the day</div>
-    <h2>Shipment History</h2>
-    <ul>
-      <li>June 25, 2025, 9:00 AM → Item received from shipper</li>
-      <li>June 25, 2025, 9:30 AM → Item departed from sorting facility in Florida.</li>
-      <li>June 25, 2025, 10:30 AM → Item arrived at Jacksonville</li>
-      <li>June 25, 2025 → Item departed from a sorting facility in Jacksonville</li>
-      <li>June 25, 2025, 12:00 PM → Item received from shipper</li>
-      <li>June 25, 2025, 1:30 PM → Item departed from sorting facility in Florida.</li>
-      <li>July 1, 2025, 7:45 PM → Item departed from a sorting facility in Georgia.</li>
-      <li>July 1, 2025, 7:45 PM → Item stopped at Alabama.</li>
-      <li>July 21, 2025, 10:00 PM → Item departed from Alabama.</li>
-    </ul>
-  </main>
-  <div class="footer">© 2025 American Winners Shipping Co</div>
+  <div class="container">
+    <h1>Track Your Shipment</h1>
+    <input type="text" id="trackingCode" placeholder="Enter Tracking Code" />
+    <button onclick="track()">Track</button>
+    <div id="result" style="display:none;">
+      <h2>Shipment Details</h2>
+      <p><strong>Tracking Code:</strong> TR599762932</p>
+      <p><strong>Shipper:</strong> Robert Agent Wood, Florida, robertagentwood@gmail.com</p>
+      <p><strong>Receiver:</strong> Paul Wood, 35916 E 231st St S, Porter, Oklahoma, 74454, USA</p>
+      <p><strong>Current Location:</strong> Oklahoma</p>
+      <p><strong>Status:</strong> 🟡 In Transit – Item departed from Alabama</p>
+      <p><strong>Expected Delivery:</strong> 22 July 2025</p>
+      <h3>Shipment History</h3>
+      <ul>
+        <li>June 25, 2025, 9:00 AM → Item received from shipper</li>
+        <li>June 25, 2025, 9:30 AM → Item departed from sorting facility in Florida.</li>
+        <li>June 25, 2025, 10:30 AM → Item arrived at Jacksonville</li>
+        <li>June 25, 2025 → Item departed from a sorting facility in Jacksonville</li>
+        <li>June 25, 2025, 12:00 PM → Item received from shipper</li>
+        <li>June 25, 2025, 1:30 PM → Item departed from sorting facility in Florida.</li>
+        <li>July 1, 2025, 10:10 PM → Item arrived in Alabama – Item not moving until some of the fees are paid</li>
+        <li>July 21, 2025, 10:00 PM → Item departed from Alabama</li>
+        <li>July 22, 2025, 7:00 AM → Item arrived in Oklahoma</li>
+      </ul>
+      <img src="package.jpg" alt="Proof of Package" style="max-width:300px;margin-top:10px;" />
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
