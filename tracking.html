@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Shipment - American Winners Shipping Co</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .hidden {
+      display: none;
+    }
+    .label {
+      font-weight: bold;
+    }
+    .status {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    .history-entry {
+      margin: 10px 0;
+      padding-left: 10px;
+      border-left: 3px solid #007bff;
+    }
+    .arrow {
+      margin: 0 10px;
+    }
+    img.package {
+      width: 100%;
+      max-width: 400px;
+      margin-top: 20px;
+      display: block;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: calc(100% - 22px);
+      margin-bottom: 15px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>American Winners Shipping Co</h1>
+    <div id="loginSection">
+      <p>Enter Tracking Code:</p>
+      <input type="text" id="trackingInput" placeholder="Enter tracking code...">
+      <button onclick="validateTracking()">Track</button>
+    </div>
+
+    <div id="trackingSection" class="hidden">
+      <p><span class="label">Tracking Code:</span> TR599762932</p>
+      <p><span class="label">Shipper:</span> Robert Agent Wood, Florida (robertagentwood@gmail.com)</p>
+      <p><span class="label">Recipient:</span> Paul Wood, 35916 E 231st St S, Porter, Oklahoma, 74454, USA</p>
+      <p><span class="label">Shipping Method:</span> By Flight</p>
+      <p><span class="label">Expected Delivery Date:</span> 22 July 2025</p>
+      <p><span class="label">Current Location:</span> Oklahoma</p>
+      <p class="status"><span class="label">Status:</span> 🟡 In Transit – Item departed from Alabama</p>
+      <h3>Shipment History</h3>
+      <div class="history-entry">June 25, 2025, 9:00 AM: Item received from shipper</div>
+      <div class="history-entry">→ June 25, 2025, 9:30 AM: Item departed from sorting facility in Florida</div>
+      <div class="history-entry">→ June 25, 2025, 10:30 AM: Item arrived at Jacksonville</div>
+      <div class="history-entry">→ June 25, 2025: Item departed from a sorting facility in Jacksonville</div>
+      <div class="history-entry">→ June 25, 2025, 12:00 PM: Item received from shipper</div>
+      <div class="history-entry">→ June 25, 2025, 1:30 PM: Item departed from sorting facility in Florida</div>
+      <div class="history-entry">→ July 1, 2025, 10:10 PM: Item arrived in Alabama – Item not moving until some of the fees are paid</div>
+      <div class="history-entry">→ July 21, 2025, 10:00 PM: Item departed from Alabama</div>
+      <div class="history-entry">→ July 22, 2025, 7:00 AM: Item arrived in Oklahoma</div>
+      <img src="proof.jpg" alt="Proof of Package" class="package">
+    </div>
+  </div>
+
+  <script>
+    function validateTracking() {
+      const input = document.getElementById("trackingInput").value.trim();
+      if (input === "TR599762932") {
+        document.getElementById("trackingSection").classList.remove("hidden");
+        document.getElementById("loginSection").classList.add("hidden");
+      } else {
+        alert("Invalid tracking code. Please try again.");
+      }
+    }
+  </script>
+</body>
+</html>
