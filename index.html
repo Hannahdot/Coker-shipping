@@ -2,82 +2,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Track Your Shipment - American Winners Shipping Co</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shipment Tracking - American Winners Shipping Co</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f4; color: #333; }
-    h1 { color: #2b2b6d; }
-    .proof-image { text-align: center; margin-bottom: 30px; }
-    .proof-image img { width: 100%; max-width: 600px; height: auto; border: 3px solid #444; border-radius: 10px; }
-    .section { background: #fff; padding: 20px; border-radius: 8px; margin-top: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    ul { list-style-type: none; padding: 0; }
-    li::before { content: "→ "; color: green; }
-    .status { font-weight: bold; color: orange; }
-    #tracking-section { display: none; }
-    input[type="text"] { padding: 10px; width: 250px; }
-    button { padding: 10px 15px; background-color: #2b2b6d; color: white; border: none; cursor: pointer; }
-    .note { font-weight: bold; font-size: 17px; color: #b30000; margin-top: 20px; }
-  </style>
-  <script>
-    function trackShipment() {
-      var code = document.getElementById("trackingCode").value;
-      if (code === "TR599762932") {
-        document.getElementById("tracking-section").style.display = "block";
-      } else {
-        alert("Tracking code not found.");
-      }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 0;
     }
-  </script>
+    header {
+      background: #004080;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    main {
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #004080;
+    }
+    .status {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #d49b00;
+    }
+    .info {
+      margin-bottom: 15px;
+    }
+    .info strong {
+      display: inline-block;
+      width: 180px;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
-
-  <h1>📦 American Winners Shipping Co</h1>
-
-  <div class="section">
-    <h2>Enter Tracking Code</h2>
-    <input type="text" id="trackingCode" placeholder="Enter tracking code">
-    <button onclick="trackShipment()">Track</button>
-  </div>
-
-  <div id="tracking-section" class="section">
-    <div class="proof-image">
-      <h2>📷 Proof of Package</h2>
-      <img src="proof.jpg" alt="Proof of package image">
-    </div>
-
-    <h2>Shipment Tracking Details</h2>
-    <p><strong>Tracking Code:</strong> TR599762932</p>
-    <p><strong>Shipping Method:</strong> ✈️ By Flight</p>
-    <p><strong>Status:</strong> <span class="status">🟡 In Transit – Item stopped at Alabama</span></p>
-    <p><strong>Expected Delivery Date:</strong> 3 July 2025 by end of the day</p>
-    <p><strong>Current Location:</strong> Alabama</p>
-
-    <h3>📍 Shipment History</h3>
+  <header>
+    <h1>American Winners Shipping Co</h1>
+  </header>
+  <main>
+    <h2>Tracking Code: TR599762932</h2>
+    <div class="info"><strong>Shipper:</strong> Robert Agent Wood, Florida (<a href="mailto:robertagentwood@gmail.com">robertagentwood@gmail.com</a>)</div>
+    <div class="info"><strong>Recipient:</strong> Paul Wood, 35916 E 231st St S, Porter, OK 74454, USA</div>
+    <div class="info"><strong>Shipping Method:</strong> By Flight</div>
+    <div class="info"><strong>Status:</strong> <span class="status">🟡 In Transit – Item departed from Alabama</span></div>
+    <div class="info"><strong>Current Location:</strong> Alabama</div>
+    <div class="info"><strong>Expected Delivery Date:</strong> 22nd July 2025 by end of the day</div>
+    <h2>Shipment History</h2>
     <ul>
-      <li>25 June 2025, 9:00 AM → Item received from shipper</li>
-      <li>25 June 2025, 9:30 AM → Item departed from sorting facility in Florida</li>
-      <li>25 June 2025, 10:30 AM → Item arrived at Jacksonville</li>
-      <li>25 June 2025 → Item departed from a sorting facility in Jacksonville</li>
-      <li>25 June 2025, 12:10 PM → Item arrived at Georgia</li>
-      <li>1 July 2025, 7:45 PM → Item departed from a sorting facility in Georgia</li>
-      <li>1 July 2025, 10:10 PM → Item arrived in Alabama. Item not moving until some of the fees are paid</li>
+      <li>June 25, 2025, 9:00 AM → Item received from shipper</li>
+      <li>June 25, 2025, 9:30 AM → Item departed from sorting facility in Florida.</li>
+      <li>June 25, 2025, 10:30 AM → Item arrived at Jacksonville</li>
+      <li>June 25, 2025 → Item departed from a sorting facility in Jacksonville</li>
+      <li>June 25, 2025, 12:00 PM → Item received from shipper</li>
+      <li>June 25, 2025, 1:30 PM → Item departed from sorting facility in Florida.</li>
+      <li>July 1, 2025, 7:45 PM → Item departed from a sorting facility in Georgia.</li>
+      <li>July 1, 2025, 7:45 PM → Item stopped at Alabama.</li>
+      <li>July 21, 2025, 10:00 PM → Item departed from Alabama.</li>
     </ul>
-
-    <p class="note">
-      An amount of $1000 has been paid, there is still an amount of $2500 to be paid.<br>
-      The rest of the fees can be paid later when item arrives ($3500 will be paid when item arrives).
-    </p>
-
-    <h3>👤 Shipper Information</h3>
-    <p><strong>Name:</strong> Robert Agent Wood</p>
-    <p><strong>Location:</strong> Florida</p>
-    <p><strong>Email:</strong> robertagentwood@gmail.com</p>
-    <p><strong>Shipment Date:</strong> 25 June 2025</p>
-
-    <h3>📦 Recipient Information</h3>
-    <p><strong>Name:</strong> Paul Wood</p>
-    <p><strong>Address:</strong> 35916 E 231st St S, Porter, Oklahoma, 74454, USA</p>
-  </div>
-
+  </main>
+  <div class="footer">© 2025 American Winners Shipping Co</div>
 </body>
 </html>
